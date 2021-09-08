@@ -12,5 +12,10 @@ pipeline {
                 sh 'docker build -t datawire/hello-world .'
             }
         }
+        stage('downstream') {
+            steps {
+                build 'helloworld'
+            }
+        }
     }
 }
